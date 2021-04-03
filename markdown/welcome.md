@@ -1,0 +1,8 @@
+## Welcome
+This is an introduction to my notes page, which you are currently viewing. Here you can find out info about how it works and what the purpose of it is.
+### The Idea Behind This
+Believe it or not, there is a purpose to this site. This is supposed to be my own personal replacement to sites like dev.to or medium.com where I can write articles, stories or guides. This was **not** my original idea, to that I have to credit Frederik Mikkelsen who made [Fred's Notes](https://ramblings.fred.moe). I quite liked his idea of a personal notes page and I didn't want to copy his as I wished to make my own, and here we are.
+### Purpose
+I breifly touched on the purpose of this in the previous section, but this entire site is designed to make it easier for me to write articles, stories, tutorials etc. and publish them on my own custom platform. I like this as it means I have control over how it looks, functions, and the entire site, and it doesn't limit viewers like medium does.
+### How It Works
+This site uses a Python backend with HTML, CSS & JS on the frontend. To write the articles, I use markdown, which is then converted to HTML using the Python module [markdown](https://python-markdown.github.io/). I generate a css file for code block formatting using a module called [Pygments](https://pygments.org/) and I use a customised version of the Material theme on this. I use Flask and Jinja to template this code to insert the formatted HTML and information about the article.
