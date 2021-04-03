@@ -101,4 +101,7 @@ a:visited {
         display: block;
         text-align: left;
     }
+	.container {
+		width: 95%;
+	}
 }
