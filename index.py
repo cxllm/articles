@@ -10,7 +10,7 @@ def format_articles(article: str):
     del arr[0]
     article = ".".join(arr).split(".py")[0].split("articles.")[1]
     info = get_article(article)
-    info["endpoint"] = f"a/{article}"
+    info["endpoint"] = f"{article}"
     return info
 
 
@@ -29,7 +29,7 @@ def root():
     return render_template("index.html", articles=articles)
 
 
-@app.route("/a/<string:article>")
+@app.route("/<string:article>")
 def article_route(article):
     try:
         article = to_html(article)
