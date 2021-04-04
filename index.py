@@ -50,7 +50,7 @@ def to_html(article: str):
         if i["endpoint"] == article.lower():
             found = i
         else:
-            return found
+            raise FileNotFoundError("Not Found")
 
     try:
         found["html"]

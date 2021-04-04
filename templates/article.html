@@ -17,14 +17,15 @@
 </head>
 
 <body>
-    {% include "header.html" %}
     <div class="container">
+
         <h1>{{content["title"]}}</h1>
         <h4><i>{{content["description"]}}</i></h4>
         <p>Published: {{content["published"]}}
             <br> Last Updated: {% if not content["updated"] %} {{content["published"]}} {%else%}
             {{content["updated"]}}
-            {%endif%}
+            {%endif%}<br><br>
+            <a href="/">Home</a>
         </p>
         <div class="stripe">
         </div>
