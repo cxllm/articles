@@ -8,7 +8,7 @@ Using the cURL tool, we will fetch the latest file from their github, and execut
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/nvm.sh | bash
 ```
 This script provides us with a set of instructions for commands to run if we wish to use it in the same terminal
-![](https://i.imgur.com/XRlTjM4.png)
+![](https://i.imgur.com/R4ERSVa.png)
 
 In my case, because I use bash, I will execute these commands:
 ```sh
