@@ -10,11 +10,11 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/nvm.sh | bash
 This script provides us with a set of instructions for commands to run if we wish to use it in the same terminal
 ![](https://i.imgur.com/R4ERSVa.png)
 
-In my case, because I use bash, I will execute these commands:
+In my case, because I use bash, I will execute these commands (The comments aren't important, these are just what is provided by nvm in their script):
 ```sh
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 ```
 Now we can use the `nvm` command
 ### Usage
