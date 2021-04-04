@@ -1,7 +1,8 @@
 from flask import Flask, render_template, request
-from article_util import to_html, get_article
 import os
 import glob
+import markdown
+from get_article import get_article
 
 
 def format_articles(article: str):
@@ -19,7 +20,7 @@ try:
     del articles[articles.index(f"{os.getcwd()}/articles/__pycache__")]
 except:
     None
-articles = list(map(format_articles, articles))
+articles: list = list(map(format_articles, articles))
 
 app = Flask(__name__, static_url_path="/public/", static_folder="public")
 
@@ -41,6 +42,31 @@ def article_route(article):
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template("404.html", path=request.path)
+
+
+def to_html(article: str):
+    found = None
+    for i in articles:
+        if i["endpoint"] == article.lower():
+            found = i
+        else:
+            return found
+
+    try:
+        found["html"]
+    except:
+        content = open(f"markdown/{found['md']}")
+        content = content.read()
+        found["html"] = markdown.markdown(
+            content,
+            extensions=[
+                "markdown.extensions.codehilite",  # Ref: # Ref: https://python-markdown.github.io/extensions/attr_list/
+                "markdown.extensions.fenced_code",  # Ref: https://python-markdown.github.io/extensions/fenced_code
+                "markdown.extensions.attr_list",  # Ref: https://python-markdown.github.io/extensions/attr_list/
+                "markdown.extensions.tables",  # Ref: https://python-markdown.github.io/extensions/tables/
+            ],
+        )
+    return found
 
 
 app.run(port=9756)
