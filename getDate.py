@@ -7,8 +7,6 @@ article_name = args[1]
 
 article = get_article(article_name)
 
-print(article)
-
 
 def getDate():
     days = [

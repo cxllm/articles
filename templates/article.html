@@ -23,7 +23,7 @@
         <h1>{{content["title"]}}</h1>
         <h4><i>{{content["description"]}}</i></h4>
         <p>Published: {{content["published"]}}
-            <br> Last Updated: {% if not content["updated"] %} {{content["published"]}} {%else%}
+            <br> Last Updated: {% if not content["updated"] %} N/A {%else%}
             {{content["updated"]}}
             {%endif%}<br><br>
         </p>
