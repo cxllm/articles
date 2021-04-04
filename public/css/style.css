@@ -7,7 +7,7 @@ body {
 	margin-bottom: 20px;
 }
 .codehilite {
-	width:100%;
+	width: 100%;
 	margin-left: 0;
  	background: transparent; 
 	color: #EEFFFF;
@@ -16,8 +16,12 @@ body {
 	border-radius: 5px;
 	text-align: left;
 	padding: 0 5px;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
-
+.codehilite:hover {
+	overflow: visible;
+}
 .container {
 	width: 50%;
 	text-align: left;
