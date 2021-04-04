@@ -44,6 +44,11 @@ def page_not_found(e):
     return render_template("404.html", path=request.path)
 
 
+extension_configs = {
+    "codehilite": {"guess_lang": False, "use_pygments": True},
+}
+
+
 def to_html(article: str):
     found = None
     for i in articles:
