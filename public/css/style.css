@@ -50,8 +50,42 @@ a.link {
     padding: 0px 20px 0 0;
 	text-align: center;
 }
+.topnav {
+    cursor: pointer;
+    width: 99%;
+    text-align: left;
+    color: white;
+    overflow: hidden;
+    position: relative;
+}
+.topnav a.icon {
+    padding: 10px 15px;
+    opacity: 0.7;
+}
+.topnav a {
+    float: left;
+    color: white;
+    opacity: 0.5;
+    padding: 15px 15px;
+    text-decoration: none;
+    font-size: 17px;
+    transition: 0.3s;
+}
+.topnav a.link {
+    float: right;
+}
+.topnav a:hover {
+    opacity: 1;
+    transition: 0.3s;
+}
+.topnav a.button {
+    display: none;
+}
 @media screen and (max-width: 1000px) {
 	.container {
 		width: 95%;
 	}
+    .topnav a {
+        font-size: 14px;
+    }
 }

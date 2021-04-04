@@ -15,14 +15,11 @@
 </head>
 
 <body>
-
+    {% include "header.html" %}
     <div class="container">
         <h1 style="text-align: center;">Callum's Notes</h1>
         <p style="text-align: center;">Welcome to my notes page where I will post numerous things such as guides or
             ideas. This is written with a combination of Python, HTML/CSS/JavaScript and Markdown</p>
-        <br>
-        <a href="https://github.com/cxllm" class="link">My GitHub</a>
-        <a href="https://cxllm.xyz/" class="link">My Site</a>
         <h2>Articles</h2>
         {% for article in articles %}
         <div class="article">
