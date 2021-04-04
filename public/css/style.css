@@ -50,15 +50,8 @@ a.link {
     padding: 0px 20px 0 0;
 	text-align: center;
 }
-.topnav a:hover {
-    opacity: 1;
-    transition: 0.3s;
-}
 @media screen and (max-width: 1000px) {
 	.container {
 		width: 95%;
 	}
-    .topnav a {
-        font-size: 14px;
-    }
 }
