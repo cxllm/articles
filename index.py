@@ -11,7 +11,6 @@ def format_articles(article: str):
     del arr[0]
     article = ".".join(arr).split(".py")[0].split("articles.")[1]
     info = get_article(article)
-    info["endpoint"] = f"{article}"
     return info
 
 
@@ -49,9 +48,11 @@ def to_html(article: str):
     for i in articles:
         if i["endpoint"] == article.lower():
             found = i
+            break
         else:
-            raise FileNotFoundError("Not Found")
-
+            continue
+    if not found:
+        raise FileNotFoundError("Not Found")
     try:
         found["html"]
     except:

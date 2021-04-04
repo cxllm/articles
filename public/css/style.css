@@ -78,9 +78,6 @@ a.link {
     opacity: 1;
     transition: 0.3s;
 }
-.topnav a.button {
-    display: none;
-}
 @media screen and (max-width: 1000px) {
 	.container {
 		width: 95%;
