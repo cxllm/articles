@@ -3,12 +3,12 @@ Node Version Manager is a version manager for node.js that is installed per ever
 ### Why would you want to use it?
 This tool provides cross distro compatibility, and allows for you to easily switch between different node.js versions with 1 command. I use it because often the version of node.js in the repositories are quite outdated for my needs, and if I want an up-to-date version, I need to download a binary from the node.js website which can get to be quite annoying every time I am setting up a server or a desktop system. NVM provides a quick and easy way to install node.js onto your system, which is why I like it.
 ### Installation
-Using the cURL tool, we will fetch the latest file from their github, and execute this, which will automatically install node version manager to our home folder. (v0.38.0 is the latest version at time of writing, you may wish to check for a new version on the [nvm github](https://github.com/nvm-sh/nvm))
+Using the cURL tool, we will fetch the latest file from their github, and execute this, which will automatically install node version manager to our home folder. This script should use the latest version of nvm as it fetches the script from the master branch.
 ```sh
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/nvm.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 ```
 This script provides us with a set of instructions for commands to run if we wish to use it in the same terminal
-![](https://i.imgur.com/R4ERSVa.png)
+![](https://i.imgur.com/Hqoxuxe.png)
 
 In my case, because I use bash, I will execute these commands (The comments aren't important, these are just what is provided by nvm in their examples):
 ```sh
