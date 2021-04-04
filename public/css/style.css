@@ -33,6 +33,11 @@ body {
 	border-radius: 1px;
     background-color: #368AF8;
 }
+.stripe.long {
+	max-width: 100%;
+	width:100%;
+}
+
 a {
 	color: #368AF8;
 }
