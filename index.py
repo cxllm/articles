@@ -19,7 +19,8 @@ try:
     del articles[articles.index(f"{os.getcwd()}/articles/__pycache__")]
 except:
     None
-articles: list = list(map(format_articles, articles))
+articles = list(map(format_articles, articles))
+articles.reverse()
 
 app = Flask(__name__, static_url_path="/public/", static_folder="public")
 
