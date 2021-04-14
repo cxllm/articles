@@ -1,7 +1,7 @@
 module.exports = {
     apps: [{
         name: "Articles",
-        script: "index.py",
+        script: "python3 index.py",
         autorestart: true,
         watch: false
     }]
