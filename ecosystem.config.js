@@ -1,8 +1,10 @@
 module.exports = {
-    apps: [{
-        name: "Articles",
-        script: "python3 index.py",
-        autorestart: true,
-        watch: false
-    }]
-}
+  apps: [
+    {
+      name: "Articles",
+      script: "gunicorn --bind 0.0.0.0:9756 wsgi:app",
+      autorestart: true,
+      watch: false,
+    },
+  ],
+};
