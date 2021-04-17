@@ -5,3 +5,5 @@ Hello, welcome to the code of [my notes page ](https://notes.cxllm.xyz). This wa
 ## How it works
 
 If you want to find out more about how this works, please read the article I wrote about it [here](https://notes.cxllm.xyz/welcome)
+
+Ignore the DMCA commits, I have removed that now.
