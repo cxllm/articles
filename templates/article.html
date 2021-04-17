@@ -1,43 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Callum's Notes - {{content["title"]}}</title>
-    <meta name="theme-color" content="#368AF8">
-    <link rel="stylesheet" href="/public/css/style.css">
-    <link rel="stylesheet" href="/public/css/codeblocks.css">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://notes.cxllm.xyz/">
-    <meta property="og:title" content="Callum's Notes - {{content['title']}}">
-    <meta property="og:description" content="{{content['description']}}">
+    <meta name="theme-color" content="#368AF8" />
+    <link rel="stylesheet" href="/public/css/style.css" />
+    <link rel="stylesheet" href="/public/css/codeblocks.css" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://notes.cxllm.xyz/" />
+    <meta property="og:title" content="Callum's Notes - {{content['title']}}" />
+    <meta property="og:description" content="{{content['description']}}" />
+  </head>
 
-</head>
-
-<body>
+  <body>
     {% include "header.html" %}
 
     <div class="container">
-        <h1>{{content["title"]}}</h1>
-        <h4><i>{{content["description"]}}</i></h4>
-        <p>Published: {{content["published"]}}
-            <br> Last Updated: {% if not content["updated"] %} N/A {%else%}
-            {{content["updated"]}}
-            {%endif%}<br><br>
-        </p>
-        <div class="stripe">
-        </div>
-        <p></p>
-        <div class="content">
-            {{content["html"] | safe}}
-        </div>
+      <h1>{{content["title"]}}</h1>
+      <h4><i>{{content["description"]}}</i></h4>
+      <p>
+        Published: {{content["published"]}} <br />
+        Last Updated: {% if not content["updated"] %} N/A {%else%} {{content["updated"]}}
+        {%endif%}<br /><br />
+      </p>
+      <div class="stripe"></div>
+      <p></p>
+      <div class="content">{{content["html"] | safe}}</div>
     </div>
-
-
-    {% include "footer.html" %}
-
-</body>
-
+  </body>
 </html>

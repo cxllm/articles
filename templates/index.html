@@ -1,40 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Callum's Notes - Home</title>
-    <meta name="theme-color" content="#368AF8">
-    <link rel="stylesheet" href="/public/css/style.css">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://notes.cxllm.xyz/">
-    <meta property="og:title" content="Callum's Notes - Home">
-    <meta property="og:description" content="The homepage of my notes page">
-    <meta name='dmca-site-verification' content='MmdjTzRMQnJFTWtBakhoWjhUQ2E0dz090' />
-</head>
+    <meta name="theme-color" content="#368AF8" />
+    <link rel="stylesheet" href="/public/css/style.css" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://notes.cxllm.xyz/" />
+    <meta property="og:title" content="Callum's Notes - Home" />
+    <meta property="og:description" content="The homepage of my notes page" />
+    <meta name="dmca-site-verification" content="MmdjTzRMQnJFTWtBakhoWjhUQ2E0dz090" />
+  </head>
 
-<body>
+  <body>
     {% include "header.html" %}
     <div class="container">
-        <h1 style="text-align: center;">Callum's Notes</h1>
-        <p style="text-align: center;">Welcome to my notes page where I will post numerous things such as guides or
-            ideas. This is written with a combination of Python, HTML/CSS/JavaScript and Markdown</p>
-        <h2>Articles</h2>
-        <div class="stripe long"></div>
-        {% for article in articles %}
-        <div class="article">
-            <p class="article-title">
-                <a href="{{article['endpoint']}}">{{article["title"]}}</a> - {{article["published"]}}
-            </p>
-            <p><i>{{ article["description"] }}</i></p>
-        </div>
-        <div class="stripe long"></div>
-        {% endfor %}
+      <h1 style="text-align: center">Callum's Notes</h1>
+      <p style="text-align: center">
+        Welcome to my notes page where I will post numerous things such as guides or ideas. This is
+        written with a combination of Python, HTML/CSS/JavaScript and Markdown
+      </p>
+      <h2>Articles</h2>
+      <div class="stripe long"></div>
+      {% for article in articles %}
+      <div class="article">
+        <p class="article-title">
+          <a href="{{article['endpoint']}}">{{article["title"]}}</a> - {{article["published"]}}
+        </p>
+        <p><i>{{ article["description"] }}</i></p>
+      </div>
+      <div class="stripe long"></div>
+      {% endfor %}
     </div>
-    {% include "footer.html" %}
-
-</body>
-
+  </body>
 </html>
