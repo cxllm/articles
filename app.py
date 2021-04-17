@@ -76,4 +76,5 @@ def to_html(article: str):
     return found
 
 
-app.run(port=9756)
+if __name__ == "__main__":
+    app.run(port=9756)
