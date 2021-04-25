@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 import os
 import glob
 import markdown
@@ -32,10 +32,16 @@ def root():
 
 @app.route("/<string:article>")
 def article_route(article):
+    try:
+        article = to_html(article)
+        return render_template("article.html", content=article)
+    except:
+        page_not_found("Error")
 
-    article = to_html(article)
-    print(article)
-    return render_template("article.html", content=article)
+
+@app.route("/favicon.ico")
+def favicon():
+    return redirect("https://cxllm.xyz/favicon.ico")
 
 
 @app.errorhandler(404)

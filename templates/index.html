@@ -11,7 +11,10 @@
     <meta property="og:url" content="https://notes.cxllm.xyz/" />
     <meta property="og:title" content="Callum's Notes - Home" />
     <meta property="og:description" content="The homepage of my notes page" />
-    <meta name="dmca-site-verification" content="MmdjTzRMQnJFTWtBakhoWjhUQ2E0dz090" />
+    <meta
+      name="dmca-site-verification"
+      content="MmdjTzRMQnJFTWtBakhoWjhUQ2E0dz090"
+    />
   </head>
 
   <body>
@@ -19,19 +22,19 @@
     <div class="container">
       <h1 style="text-align: center">Callum's Notes</h1>
       <p style="text-align: center">
-        Welcome to my notes page where I will post numerous things such as guides or ideas. This is
-        written with a combination of Python, HTML/CSS/JavaScript and Markdown
+        Welcome to my notes page where I will post numerous things such as
+        guides or ideas. This is written with a combination of Python,
+        HTML/CSS/JavaScript and Markdown
       </p>
       <h2>Articles</h2>
-      <div class="stripe long"></div>
       {% for article in articles %}
       <div class="article">
         <p class="article-title">
-          <a href="{{article['endpoint']}}">{{article["title"]}}</a> - {{article["published"]}}
+          <a href="{{article['endpoint']}}">{{article["title"]}}</a> -
+          {{article["published"]}}
         </p>
         <p><i>{{ article["description"] }}</i></p>
       </div>
-      <div class="stripe long"></div>
       {% endfor %}
     </div>
   </body>
