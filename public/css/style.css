@@ -36,6 +36,11 @@ body {
   border-radius: 1px;
   background-color: #368af8;
 }
+.stripe.separator {
+  max-width: 100%;
+  width: 100%;
+  height: 3px;
+}
 a {
   color: #368af8;
 }
@@ -45,9 +50,6 @@ a:visited {
 .article-title {
   font-size: medium;
   font-weight: bold;
-}
-.article {
-  padding-bottom: 3px;
 }
 a.link {
   padding: 0px 20px 0 0;

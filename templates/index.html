@@ -27,6 +27,7 @@
         HTML/CSS/JavaScript and Markdown
       </p>
       <h2>Articles</h2>
+      <div class="stripe separator"></div>
       {% for article in articles %}
       <div class="article">
         <p class="article-title">
@@ -34,6 +35,7 @@
           {{article["published"]}}
         </p>
         <p><i>{{ article["description"] }}</i></p>
+        <div class="stripe separator"></div>
       </div>
       {% endfor %}
     </div>
