@@ -12,4 +12,4 @@ I breifly touched on the purpose of this in the previous section, but this entir
 
 ### How It Works
 
-This site uses a Python backend with HTML, CSS & JS on the frontend. To write the articles, I use markdown, which is then converted to HTML using the Python module [markdown](https://python-markdown.github.io/). I generate a css file for code block formatting using a module called [Pygments](https://pygments.org/) and I use a customised version of the Material theme on this. I use Flask and Jinja to template this code to insert the formatted HTML and information about the article.
+This site uses a Python backend with HTML, CSS & JS on the frontend. To write the articles, I use markdown, which is then converted to HTML using the Python module [markdown](https://python-markdown.github.io/). I generate a css file for code block formatting using a module called [Pygments](https://pygments.org/) and I use a customised version of the Material theme on this. I use Flask and Jinja to template this code to insert the formatted HTML and information about the article. You can find the source code for this project [here](https://github.com/cxllm/markdown)
