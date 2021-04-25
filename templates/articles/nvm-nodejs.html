@@ -1,0 +1,36 @@
+<h2>Node Version Manager</h2>
+<p>Node Version Manager is a version manager for node.js that is installed per every user on a system so that each user can have independent node.js versions. This guide will show you how to install it and how to use it to install node.js on your system.</p>
+<h3>Why would you want to use it?</h3>
+<p>This tool provides cross distro compatibility, and allows for you to easily switch between different node.js versions with 1 command. I use it because often the version of node.js in the repositories are quite outdated for my needs, and if I want an up-to-date version, I need to download a binary from the node.js website which can get to be quite annoying every time I am setting up a server or a desktop system. NVM provides a quick and easy way to install node.js onto your system, which is why I like it.</p>
+<h3>Installation</h3>
+<p>Using the cURL tool, we will fetch the latest file from their github, and execute this, which will automatically install node version manager to our home folder. This script should use the latest version of nvm as it fetches the script from the master branch.</p>
+<div class="codehilite"><pre><span></span><code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh <span class="p">|</span> bash
+</code></pre></div>
+
+<p>This script provides us with a set of instructions for commands to run if we wish to use it in the same terminal
+<img alt="" src="https://i.imgur.com/Hqoxuxe.png" /></p>
+<p>In my case, because I use bash, I will execute these commands (The comments aren't important, these are just what is provided by nvm in their examples):</p>
+<div class="codehilite"><pre><span></span><code><span class="nb">export</span> <span class="nv">NVM_DIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.nvm&quot;</span>
+<span class="o">[</span> -s <span class="s2">&quot;</span><span class="nv">$NVM_DIR</span><span class="s2">/nvm.sh&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="se">\.</span> <span class="s2">&quot;</span><span class="nv">$NVM_DIR</span><span class="s2">/nvm.sh&quot;</span>  <span class="c1"># This loads nvm</span>
+<span class="o">[</span> -s <span class="s2">&quot;</span><span class="nv">$NVM_DIR</span><span class="s2">/bash_completion&quot;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="se">\.</span> <span class="s2">&quot;</span><span class="nv">$NVM_DIR</span><span class="s2">/bash_completion&quot;</span> <span class="c1"># This loads nvm bash_completion</span>
+</code></pre></div>
+
+<p>Now we can use the <code>nvm</code> command</p>
+<h3>Usage</h3>
+<p>Installing node.js latest version (which at time of writing is v15.13.0)</p>
+<div class="codehilite"><pre><span></span><code>nvm install node
+</code></pre></div>
+
+<p>Installing node.js latest LTS Version (which at time of writing is v14.6.0)</p>
+<div class="codehilite"><pre><span></span><code>nvm install --lts
+</code></pre></div>
+
+<p>Switching between versions, in this example, I will use v15</p>
+<div class="codehilite"><pre><span></span><code>nvm use 15
+</code></pre></div>
+
+<p>Removing a version, I will once again use v15</p>
+<div class="codehilite"><pre><span></span><code>nvm uninstall 15
+</code></pre></div>
+
+<p>I hope this guide helped with understanding how to use NVM</p>

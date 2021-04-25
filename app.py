@@ -32,11 +32,10 @@ def root():
 
 @app.route("/<string:article>")
 def article_route(article):
-    try:
-        article = to_html(article)
-        return render_template("article.html", content=article)
-    except:
-        return page_not_found("e")
+
+    article = to_html(article)
+    print(article)
+    return render_template("article.html", content=article)
 
 
 @app.errorhandler(404)
@@ -64,7 +63,7 @@ def to_html(article: str):
     except:
         content = open(f"markdown/{found['md']}")
         content = content.read()
-        found["html"] = markdown.markdown(
+        html = markdown.markdown(
             content,
             extensions=[
                 "markdown.extensions.codehilite",  # Ref: # Ref: https://python-markdown.github.io/extensions/attr_list/
@@ -73,8 +72,15 @@ def to_html(article: str):
                 "markdown.extensions.tables",  # Ref: https://python-markdown.github.io/extensions/tables/
             ],
         )
+        print(html)
+        found["html"] = found["md"].split(".md")[0] + ".html"
+        f = open(f"templates/articles/{found['html']}", "w")
+        f.seek(0)
+        f.write(html)
+        f.truncate()
+        f.close()
     return found
 
 
 if __name__ == "__main__":
-    app.run(port=9756)
+    app.run(port=9756, debug=True)

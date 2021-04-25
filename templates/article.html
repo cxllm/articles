@@ -22,12 +22,12 @@
       <h4><i>{{content["description"]}}</i></h4>
       <p>
         Published: {{content["published"]}} <br />
-        Last Updated: {% if not content["updated"] %} N/A {%else%} {{content["updated"]}}
-        {%endif%}<br /><br />
+        Last Updated: {% if not content["updated"] %} N/A {%else%}
+        {{content["updated"]}} {%endif%}<br /><br />
       </p>
       <div class="stripe"></div>
       <p></p>
-      <div class="content">{{content["html"] | safe}}</div>
+      <div class="content">{% include './articles/' + content['html'] %}</div>
     </div>
   </body>
 </html>
