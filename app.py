@@ -47,13 +47,14 @@ def root():
     return render_template("index.html", articles=articles)
 
 
-@app.route("/<int:year>/<string:month>/<int:day>/<string:article>")
+@app.route("/<string:year>/<string:month>/<string:day>/<string:article>")
 def article_route(year, month, day, article):
     try:
-        article = to_html(article)
+        print(year, month, day)
+        article = to_html(article, year, month, day)
         return render_template("article.html", content=article)
     except:
-        page_not_found("Error")
+        return page_not_found("Error")
 
 
 @app.route("/favicon.ico")
@@ -69,15 +70,22 @@ def page_not_found(e):
 extension_configs = {"codehilite": {"use_pygments": True}}
 
 
-def to_html(article: str):
+def to_html(article: str, year, month, day):
     found = None
     for i in articles:
-        if i["endpoint"] == article.lower():
+        print(i)
+        if (
+            i["endpoint"] == article.lower()
+            and i["year"] == year
+            and i["month"].lower() == month.lower()
+            and i["day"] == day
+        ):
             found = i
             break
         else:
             continue
-    if not found:
+    print(found)
+    if found == None:
         raise FileNotFoundError("Not Found")
     try:
         found["html"]
