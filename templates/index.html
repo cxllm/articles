@@ -31,7 +31,7 @@
       {% for article in articles %}
       <div class="article">
         <p class="article-title">
-          <a href="{{article['endpoint']}}">{{article["title"]}}</a> -
+          <a href="{{article['full_endpoint']}}">{{article["title"]}}</a> -
           {{article["published"]}}
         </p>
         <p><i>{{ article["description"] }}</i></p>

@@ -5,15 +5,6 @@ import markdown
 from get_article import get_article
 
 
-def format_articles(article: str):
-    article = article.split(os.getcwd())[1]
-    arr = article.split("/")
-    del arr[0]
-    article = ".".join(arr).split(".py")[0].split("articles.")[1]
-    info = get_article(article)
-    return info
-
-
 articles = glob.glob(f"{os.getcwd()}/articles/**/**/**/*")
 print(articles)
 try:
@@ -26,15 +17,27 @@ except:
 artidirs = articles
 articles = []
 for article in artidirs:
+    if "__pycache__" in article:
+        continue
     article = article.split(os.getcwd())[1]
     arr = article.split("/")
     del arr[0]
     article = ".".join(arr).split(".py")[0].split("articles.")[1]
+    dates = arr
+    print(dates)
+    del dates[0]
     info = get_article(article)
+    info["year"] = dates[0]
+    info["month"] = dates[1]
+    info["day"] = dates[2]
+    info["endpoint"] = dates[3].split(".py")[0]
+    info[
+        "full_endpoint"
+    ] = f"/{info['year']}/{info['month']}/{info['day']}/{info['endpoint']}"
+    print(info)
     if info != None:
         articles.append(info)
 articles.reverse()
-# list(map(format_articles, articles))  #
 
 app = Flask(__name__, static_url_path="/public/", static_folder="public")
 
@@ -44,8 +47,8 @@ def root():
     return render_template("index.html", articles=articles)
 
 
-@app.route("/<string:article>")
-def article_route(article):
+@app.route("/<int:year>/<string:month>/<int:day>/<string:article>")
+def article_route(year, month, day, article):
     try:
         article = to_html(article)
         return render_template("article.html", content=article)
