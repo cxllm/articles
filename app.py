@@ -17,13 +17,24 @@ def format_articles(article: str):
 articles = glob.glob(f"{os.getcwd()}/articles/**/**/**/*")
 print(articles)
 try:
-    for i in range(len(articles)):
+    for i in range(len(articles - 1)):
         if "__pycache__" in articles[i]:
             del articles[i]
         print(articles)
 except:
     None
-articles = list(map(format_articles, articles))  #
+artidirs = articles
+articles = []
+for article in artidirs:
+    article = article.split(os.getcwd())[1]
+    arr = article.split("/")
+    del arr[0]
+    article = ".".join(arr).split(".py")[0].split("articles.")[1]
+    info = get_article(article)
+    if info != None:
+        articles.append(info)
+articles.reverse()
+# list(map(format_articles, articles))  #
 
 app = Flask(__name__, static_url_path="/public/", static_folder="public")
 
