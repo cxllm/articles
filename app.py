@@ -11,7 +11,6 @@ def format_articles(article: str):
     del arr[0]
     article = ".".join(arr).split(".py")[0].split("articles.")[1]
     info = get_article(article)
-    print(info)
     return info
 
 
@@ -21,6 +20,7 @@ try:
     for i in range(len(articles)):
         if "__pycache__" in articles[i]:
             del articles[i]
+        print(articles)
 except:
     None
 articles = list(map(format_articles, articles))  #
