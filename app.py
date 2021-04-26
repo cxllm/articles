@@ -11,16 +11,19 @@ def format_articles(article: str):
     del arr[0]
     article = ".".join(arr).split(".py")[0].split("articles.")[1]
     info = get_article(article)
+    print(info)
     return info
 
 
-articles = glob.glob(f"{os.getcwd()}/articles/*")
+articles = glob.glob(f"{os.getcwd()}/articles/**/**/**/*")
+print(articles)
 try:
-    del articles[articles.index(f"{os.getcwd()}/articles/__pycache__")]
+    for i in range(len(articles)):
+        if "__pycache__" in articles[i]:
+            del articles[i]
 except:
     None
-articles = list(map(format_articles, articles))
-articles.reverse()
+articles = list(map(format_articles, articles))  #
 
 app = Flask(__name__, static_url_path="/public/", static_folder="public")
 
@@ -49,9 +52,7 @@ def page_not_found(e):
     return render_template("404.html", path=request.path)
 
 
-extension_configs = {
-    "codehilite": {"guess_lang": False, "use_pygments": True},
-}
+extension_configs = {"codehilite": {"use_pygments": True}}
 
 
 def to_html(article: str):
@@ -78,7 +79,6 @@ def to_html(article: str):
                 "markdown.extensions.tables",  # Ref: https://python-markdown.github.io/extensions/tables/
             ],
         )
-        print(html)
         found["html"] = found["md"].split(".md")[0] + ".html"
         f = open(f"templates/articles/{found['html']}", "w")
         f.seek(0)
