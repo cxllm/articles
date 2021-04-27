@@ -6,15 +6,14 @@ from get_article import get_article
 
 
 articles = glob.glob(f"{os.getcwd()}/articles/**/**/**/*")
-print(articles)
 try:
-    for i in range(len(articles - 1)):
+    for i in range(len(articles) - 1):
         if "__pycache__" in articles[i]:
             del articles[i]
-        print(articles)
 except:
     None
 artidirs = articles
+print(artidirs)
 articles = []
 for article in artidirs:
     if "__pycache__" in article:
@@ -24,7 +23,6 @@ for article in artidirs:
     del arr[0]
     article = ".".join(arr).split(".py")[0].split("articles.")[1]
     dates = arr
-    print(dates)
     del dates[0]
     info = get_article(article)
     info["year"] = dates[0]
@@ -34,7 +32,6 @@ for article in artidirs:
     info[
         "full_endpoint"
     ] = f"/{info['year']}/{info['month']}/{info['day']}/{info['endpoint']}"
-    print(info)
     if info != None:
         articles.append(info)
 articles.reverse()
