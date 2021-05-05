@@ -4,18 +4,16 @@ import glob
 import markdown
 from get_article import get_article
 
-
 articles = glob.glob(f"{os.getcwd()}/articles/**/**/**/*")
 try:
     for i in range(len(articles) - 1):
         if "__pycache__" in articles[i]:
             del articles[i]
-except:
-    None
-artidirs = articles
-print(artidirs)
+except IndexError:
+    articles = articles
+article_dirs = articles
 articles = []
-for article in artidirs:
+for article in article_dirs:
     if "__pycache__" in article:
         continue
     article = article.split(os.getcwd())[1]
@@ -32,7 +30,7 @@ for article in artidirs:
     info[
         "full_endpoint"
     ] = f"/{info['year']}/{info['month']}/{info['day']}/{info['endpoint']}"
-    if info != None:
+    if info is not None:
         articles.append(info)
 articles.reverse()
 
@@ -44,13 +42,12 @@ def root():
     return render_template("index.html", articles=articles)
 
 
-@app.route("/<string:year>/<string:month>/<string:day>/<string:article>")
-def article_route(year, month, day, article):
+@app.route("/<string:year>/<string:month>/<string:day>/<string:article_name>")
+def article_route(year, month, day, article_name):
     try:
-        print(year, month, day)
-        article = to_html(article, year, month, day)
-        return render_template("article.html", content=article)
-    except:
+        a = to_html(article_name, year, month, day)
+        return render_template("article.html", content=a)
+    except FileNotFoundError:
         return page_not_found("Error")
 
 
@@ -67,12 +64,11 @@ def page_not_found(e):
 extension_configs = {"codehilite": {"use_pygments": True}}
 
 
-def to_html(article: str, year, month, day):
+def to_html(article_name: str, year, month, day):
     found = None
     for i in articles:
-        print(i)
         if (
-            i["endpoint"] == article.lower()
+            i["endpoint"] == article_name.lower()
             and i["year"] == year
             and i["month"].lower() == month.lower()
             and i["day"] == day
@@ -81,18 +77,17 @@ def to_html(article: str, year, month, day):
             break
         else:
             continue
-    print(found)
-    if found == None:
+    if found is None:
         raise FileNotFoundError("Not Found")
     try:
         found["html"]
-    except:
+    except KeyError:
         content = open(f"markdown/{found['md']}")
         content = content.read()
         html = markdown.markdown(
             content,
             extensions=[
-                "markdown.extensions.codehilite",  # Ref: # Ref: https://python-markdown.github.io/extensions/attr_list/
+                "markdown.extensions.codehilite",  # Ref: https://python-markdown.github.io/extensions/code_hilite
                 "markdown.extensions.fenced_code",  # Ref: https://python-markdown.github.io/extensions/fenced_code
                 "markdown.extensions.attr_list",  # Ref: https://python-markdown.github.io/extensions/attr_list/
                 "markdown.extensions.tables",  # Ref: https://python-markdown.github.io/extensions/tables/

@@ -17,7 +17,7 @@ article = get_article(article)
 print(article)
 
 
-def getDate():
+def get_date():
     days = [
         "Monday",
         "Tuesday",
@@ -36,6 +36,6 @@ def getDate():
     return time
 
 
-print(getDate())
+print(get_date())
 f = open(directory, "w")
 f.write(f"content={article}")

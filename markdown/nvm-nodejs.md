@@ -8,7 +8,7 @@ This tool provides cross distro compatibility, and allows for you to easily swit
 
 ### Installation
 
-Using the cURL tool, we will fetch the latest file from their github, and execute this, which will automatically install node version manager to our home folder. This script should use the latest version of nvm as it fetches the script from the master branch.
+Using the cURL tool, we will fetch the latest file from their GitHub, and execute this, which will automatically install node version manager to our home folder. This script should use the latest version of nvm as it fetches the script from the master branch.
 
 ```sh
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
@@ -29,13 +29,13 @@ Now we can use the `nvm` command
 
 ### Usage
 
-Installing node.js latest version (which at time of writing is v15.13.0)
+Installing the latest node.js version (which at time of writing is v15.13.0)
 
 ```
 nvm install node
 ```
 
-Installing node.js latest LTS Version (which at time of writing is v14.6.0)
+Installing the latest node.js LTS Version (which at time of writing is v14.6.0)
 
 ```
 nvm install --lts

@@ -1,4 +1,4 @@
-## Testing the markdown parser # {: #anid .aclass somekey='some value' }
+## Testing the Markdown parser # {: #anid .aclass somekey='some value' }
 [This should be a link](https://cxllm.xyz)
 
 - This
