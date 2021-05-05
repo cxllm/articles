@@ -84,7 +84,7 @@ a.link {
 }
 @media screen and (max-width: 1000px) {
   .container {
-    width: 100%;
+    width: 95%;
   }
   .topnav a {
     font-size: 14px;
