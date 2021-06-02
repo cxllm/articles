@@ -32,7 +32,6 @@ for article in article_dirs:
     ] = f"/{info['year']}/{info['month']}/{info['day']}/{info['endpoint']}"
     if info is not None:
         articles.append(info)
-articles.reverse()
 
 app = Flask(__name__, static_url_path="/public/", static_folder="public")
 
