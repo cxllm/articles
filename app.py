@@ -3,7 +3,9 @@ import os
 import glob
 import markdown
 from get_article import get_article
+from pathlib import Path
 
+Path(f"{os.getcwd()}/templates/articles").mkdir(parents=True, exist_ok=True)
 articles = glob.glob(f"{os.getcwd()}/articles/**/**/**/*")
 try:
     for i in range(len(articles) - 1):
