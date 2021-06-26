@@ -1,5 +1,5 @@
 __pycache__
 time.js
-templates/articles
+templates/articles/*
 .idea
 .vscode
