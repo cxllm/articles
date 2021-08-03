@@ -1,4 +1,9 @@
 /* Material Theme Code Blocks */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap');
+.codehilite, pre, code {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+}
 pre {
   line-height: 125%;
 }
