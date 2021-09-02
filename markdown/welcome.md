@@ -4,7 +4,7 @@ This is an introduction to my notes page, which you are currently viewing. Here 
 
 ### The Idea Behind This
 
-Believe it or not, there is a purpose to this site. This is supposed to be my own personal replacement to sites like dev.to or medium.com where I can write articles, news or guides. This was **not** my original idea, to that I have to credit Frederik Mikkelsen who made [Fred's Notes](https://ramblings.fred.moe). I quite liked his idea of a personal notes page, and I didn't want to copy his one I wished to make my own, and here we are. This probably isn't the most efficient code in the world, but hey, it works.
+Believe it or not, there is a purpose to this site. This is supposed to be my own personal replacement to sites like dev.to or medium.com where I can write articles, news or guides. This was **not** my original idea, to that I have to credit Freya Arbjerg who made [Freya's Notes](https://blog.arbjerg.dev/). I quite liked his idea of a personal notes page, and I didn't want to copy his one I wished to make my own, and here we are. This probably isn't the most efficient code in the world, but hey, it works.
 
 ### Purpose
 
