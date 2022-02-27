@@ -6,7 +6,7 @@ from get_article import get_article
 from pathlib import Path
 
 Path(f"{os.getcwd()}/templates/articles").mkdir(parents=True, exist_ok=True)
-articles = glob.glob(f"{os.getcwd()}/articles/**/**/**/*")
+articles = sorted(glob.glob(f"{os.getcwd()}/articles/**/**/**/*", recursive=False))
 try:
     for i in range(len(articles) - 1):
         if "__pycache__" in articles[i]:
@@ -35,7 +35,7 @@ for article in article_dirs:
     ] = f"/{info['year']}/{info['month']}/{info['day']}/{info['endpoint']}"
     if info is not None:
         articles.append(info)
-articles.reverse()
+# articles.reverse()
 
 app = Flask(__name__, static_url_path="/public/", static_folder="public")
 
