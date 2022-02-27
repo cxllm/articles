@@ -15,10 +15,12 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 ```
 
 This will show up with a prompt like this:
+
 ![](https://i.imgur.com/ME1OXkM.png)
 
 Here you can choose to set ZSH as the default shell that launches on SSH and when you open a terminal. You can always change it back to bash afterwards with the `chsh` command.
 To set ZSH as the default shell, press enter, and it should ask for your sudo password, and then bring you into a shell with a different theme than before:
+
 ![](https://i.imgur.com/dEQVZ48.png)
 
 And that's how to install Oh My ZSH!
@@ -27,7 +29,7 @@ And that's how to install Oh My ZSH!
 
 If you open the `~/.zshrc` file, you file a lot of configuration options that allow you to change things like themes, plugins and more. When I'm configuring Oh My ZSH, the main things I change are plugins and themes.
 
-For themes, you can choose any from a number of official themes and unofficial too, you just have to clone these into the .oh-my-zsh folder in your home folder for that to work. To change the theme, navigate to the `ZSH_THEME` option, and change it to whatever theme you want. You can find a list of official themes [here](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)
+For themes, you can choose any from a number of official themes and unofficial too, you just have to clone these into the .oh-my-zsh folder in your home folder for that to work. To change the theme, navigate to the `ZSH_THEME` option, and change it to whatever theme you want. You can find a list of official themes [here](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes). My favourite theme to use is the agnoster theme.
 
 For plugins, you can enable any number of the official plugins supported by Oh My ZSH. Navigate to the `plugins=(git)` section, and add any plugins from [here](https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins) that you would like enabled. I like to include the archlinux and npm plugins, as they provided detailed autocompletion on tab.
 
