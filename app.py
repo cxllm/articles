@@ -18,6 +18,7 @@ articles = []
 for article in article_dirs:
     if "__pycache__" in article:
         continue
+    print(article)
     article = article.split(os.getcwd())[1]
     arr = article.split("/")
     del arr[0]
