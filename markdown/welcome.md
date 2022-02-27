@@ -2,7 +2,9 @@
 
 This is an introduction to my blog, which you are currently viewing. Here you can find out info about how it works and what the purpose of it is.
 
-Before making this, I had seen other people making their own blogs, and I wanted one of my own, but I didn't want the limitations of Medium or dev.to, so I decided to make my own. This site has been remade a few times, and there will often be big gaps between me posting different articles here as I don't have a lot of content to post
+### Why did I make this?
+
+I made this site because I wanted to be able to post articles somewhere that was my own instead of somewhere like dev.to or medium so that I could have it look exactly as I wanted to and do everything I wanted it to. I was inspired after seeing other make their own blog sites to make my own where I could do the same as them, while it was completely my own. This entire site is designed to make it easier for me to write articles, news, tutorials etc. and publish them on my own custom platform. I like this as it means I have control over how it looks, functions, and the entire site, and it doesn't limit viewers like medium does.
 
 ### How It Works
 
