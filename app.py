@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request
 import os
 import glob
 import markdown
@@ -12,7 +12,7 @@ try:
         if "__pycache__" in articles[i]:
             del articles[i]
 except IndexError:
-    articles = articles
+    pass
 article_dirs = articles
 articles = []
 for article in article_dirs:
@@ -21,7 +21,7 @@ for article in article_dirs:
     article = article.split(os.getcwd())[1]
     arr = article.split("/")
     del arr[0]
-    article = ".".join(arr).split(".py")[0].split("articles.")[1]
+    article = ".".join(arr).split(".py", maxsplit=1)[0].split("articles.")[1]
     dates = arr
     del dates[0]
     info = get_article(article)
@@ -53,13 +53,9 @@ def article_route(year, month, day, article_name):
         return page_not_found("Error")
 
 
-@app.route("/favicon.ico")
-def favicon():
-    return redirect("https://cxllm.xyz/favicon.ico")
-
-
 @app.errorhandler(404)
 def page_not_found(e):
+    del e
     return render_template("404.html", path=request.path)
 
 
@@ -77,30 +73,30 @@ def to_html(article_name: str, year, month, day):
         ):
             found = i
             break
-        else:
-            continue
     if found is None:
         raise FileNotFoundError("Not Found")
     try:
         found["html"]
     except KeyError:
-        content = open(f"markdown/{found['md']}")
-        content = content.read()
-        html = markdown.markdown(
-            content,
-            extensions=[
-                "markdown.extensions.codehilite",  # Ref: https://python-markdown.github.io/extensions/code_hilite
-                "markdown.extensions.fenced_code",  # Ref: https://python-markdown.github.io/extensions/fenced_code
-                "markdown.extensions.attr_list",  # Ref: https://python-markdown.github.io/extensions/attr_list/
-                "markdown.extensions.tables",  # Ref: https://python-markdown.github.io/extensions/tables/
-            ],
-        )
-        found["html"] = found["md"].split(".md")[0] + ".html"
-        f = open(f"templates/articles/{found['html']}", "w")
-        f.seek(0)
-        f.write(html)
-        f.truncate()
-        f.close()
+        with open(f"markdown/{found['md']}", encoding="utf-8") as content:
+            content = content.read()
+            html = markdown.markdown(
+                content,
+                extensions=[
+                    "markdown.extensions.codehilite",  # Ref: https://python-markdown.github.io/extensions/code_hilite
+                    "markdown.extensions.fenced_code",  # Ref: https://python-markdown.github.io/extensions/fenced_code
+                    "markdown.extensions.attr_list",  # Ref: https://python-markdown.github.io/extensions/attr_list/
+                    "markdown.extensions.tables",  # Ref: https://python-markdown.github.io/extensions/tables/
+                ],
+            )
+            found["html"] = found["md"].split(".md")[0] + ".html"
+            with open(
+                f"templates/articles/{found['html']}", "w", encoding="utf-8"
+            ) as f:
+                f.seek(0)
+                f.write(html)
+                f.truncate()
+                f.close()
     return found
 
 

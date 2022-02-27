@@ -1,14 +1,8 @@
 ## Welcome
 
-This is an introduction to my notes page, which you are currently viewing. Here you can find out info about how it works and what the purpose of it is.
+This is an introduction to my blog, which you are currently viewing. Here you can find out info about how it works and what the purpose of it is.
 
-### The Idea Behind This
-
-Believe it or not, there is a purpose to this site. This is supposed to be my own personal replacement to sites like dev.to or medium.com where I can write articles, news or guides. This was **not** my original idea, to that I have to credit Freya Arbjerg who made [Freya's Notes](https://blog.arbjerg.dev/). I quite liked his idea of a personal notes page, and I didn't want to copy his one I wished to make my own, and here we are. This probably isn't the most efficient code in the world, but hey, it works.
-
-### Purpose
-
-I briefly touched on the purpose of this in the previous section, but this entire site is designed to make it easier for me to write articles, news, tutorials etc. and publish them on my own custom platform. I like this as it means I have control over how it looks, functions, and the entire site, and it doesn't limit viewers like medium does.
+Before making this, I had seen other people making their own blogs, and I wanted one of my own, but I didn't want the limitations of Medium or dev.to, so I decided to make my own. This site has been remade a few times, and there will often be big gaps between me posting different articles here as I don't have a lot of content to post
 
 ### How It Works
 

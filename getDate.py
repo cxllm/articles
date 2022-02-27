@@ -28,7 +28,7 @@ def get_date():
         "Sunday",
     ]
     time = datetime.now()
-    time = time.strftime(f"{days[time.weekday()]}, %d %b %Y")
+    time = time.strftime(f"{days[time.weekday()]}, %d %B %Y")
     if article["published"]:
         article["updated"] = time
     else:
@@ -37,5 +37,5 @@ def get_date():
 
 
 print(get_date())
-f = open(directory, "w")
-f.write(f"content={article}")
+with open(directory, "w", encoding="utf-8") as f:
+    f.write(f"content={article}")
